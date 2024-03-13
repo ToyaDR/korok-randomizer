@@ -7,7 +7,7 @@ module.exports = {
   mode: prod ? 'production' : 'development',
   entry: './src/App.tsx',
   output: {
-    path: __dirname + '/dist/',
+    path: __dirname + '/',
     filename: 'bundle.js',
   },
   module: {
@@ -29,7 +29,7 @@ module.exports = {
   devtool: prod ? undefined : 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: './src/index.html',
     }),
     new MiniCssExtractPlugin(),
   ],
