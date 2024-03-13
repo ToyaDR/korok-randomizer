@@ -8,6 +8,7 @@ module.exports = {
   entry: './src/App.tsx',
   output: {
     path: __dirname + '/dist/',
+    filename: 'bundle.js',
   },
   module: {
     rules: [
