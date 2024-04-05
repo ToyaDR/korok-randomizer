@@ -9,5 +9,5 @@ const bodies = [
   "yellow-green",
 ]
 export const getRandomBody = () => {
-  return `${pathPrefix}${bodies[(getRandomInt(5))]}.png`;
+  return `${pathPrefix}${bodies[(getRandomInt(bodies.length))]}.png`;
 }

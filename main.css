@@ -26,4 +26,11 @@ body {
   z-index:2;
 }
 
+#korokLeftHandAccessory {
+  position:absolute;
+  top:10;
+  left:10;
+  z-index:3;
+}
+
 /*# sourceMappingURL=main.css.map*/

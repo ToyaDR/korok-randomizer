@@ -39672,11 +39672,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/chunk-QAITB7GG.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-PULVB27S.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/chunk-QAITB7GG.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-PULVB27S.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
 /* harmony import */ var _util_getRandomBody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/getRandomBody */ "./src/util/getRandomBody.ts");
 /* harmony import */ var _util_getRandomRightHandAccessory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/getRandomRightHandAccessory */ "./src/util/getRandomRightHandAccessory.ts");
+/* harmony import */ var _util_getRandomLeftHandAccessory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/getRandomLeftHandAccessory */ "./src/util/getRandomLeftHandAccessory.ts");
+
 
 
 
@@ -39684,19 +39686,24 @@ __webpack_require__.r(__webpack_exports__);
 const App = () => {
     const [body, setBody] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [rightHandAccessory, setRightHandAccessory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.ChakraProvider, null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Box, null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Box, null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Button, { onClick: () => {
+    const [leftHandAccessory, setLeftHandAccessory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.ChakraProvider, null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Button, { onClick: () => {
                         setBody((0,_util_getRandomBody__WEBPACK_IMPORTED_MODULE_1__.getRandomBody)());
                         setRightHandAccessory((0,_util_getRandomRightHandAccessory__WEBPACK_IMPORTED_MODULE_2__.getRandomRightHandAccessory)());
+                        setLeftHandAccessory((0,_util_getRandomLeftHandAccessory__WEBPACK_IMPORTED_MODULE_3__.getRandomLeftHandAccessory)());
                     } }, "Randomize!")),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Box, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, null,
                 body
                     ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: body, id: "korokBody" })
                     : null,
                 rightHandAccessory
                     ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: rightHandAccessory, id: "korokRightHandAccessory" })
+                    : null,
+                leftHandAccessory
+                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: leftHandAccessory, id: "korokLeftHandAccessory" })
                     : null,
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: './src/assets/background.png', alt: 'background', id: "korokBackground" })))));
 };
@@ -39727,7 +39734,7 @@ const bodies = [
     "yellow-green",
 ];
 const getRandomBody = () => {
-    return `${pathPrefix}${bodies[((0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(5))]}.png`;
+    return `${pathPrefix}${bodies[((0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(bodies.length))]}.png`;
 };
 
 
@@ -39746,6 +39753,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
+};
+
+
+/***/ }),
+
+/***/ "./src/util/getRandomLeftHandAccessory.ts":
+/*!************************************************!*\
+  !*** ./src/util/getRandomLeftHandAccessory.ts ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getRandomLeftHandAccessory: () => (/* binding */ getRandomLeftHandAccessory)
+/* harmony export */ });
+/* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getRandomInt */ "./src/util/getRandomInt.ts");
+
+const pathPrefix = "./src/assets/accessories/left-hand/";
+const leftHandAccessories = [
+    "berry-branch-left",
+    "leaf-fan",
+];
+const getRandomLeftHandAccessory = () => {
+    const index = (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(leftHandAccessories.length + 1);
+    if (index >= leftHandAccessories.length) {
+        return null;
+    }
+    return `${pathPrefix}${leftHandAccessories[index]}.png`;
 };
 
 
