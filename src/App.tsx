@@ -1,13 +1,30 @@
-import * as React from 'react';
-import { ChakraProvider } from "@chakra-ui/react";
+import React, { useState } from 'react';
+import { Box, Button, ChakraProvider } from "@chakra-ui/react";
+import { getRandomBody } from './util/getRandomBody';
 
 const App = () => {
+  const [body, setBody] = useState<string | null>(null);
   return (
     <ChakraProvider>
-      <h1>Korok Randomizer</h1>
-      <>
-        <img src='./src/assets/background.png' alt='background' />
-      </>
+      <Box>
+        <Box>
+          <Button onClick={
+            () => { 
+              setBody(getRandomBody())  
+            }
+          }>
+            Randomize!
+          </Button>
+        </Box>
+        <Box>
+        {
+          body
+          ? <img src={`./src/assets/bodies/${body}.png`} id="korokBody"/> 
+          : null
+        }
+        <img src='./src/assets/background.png' alt='background' id="korokBackground"/>
+        </Box>
+      </Box>
     </ChakraProvider>
   )
 }
