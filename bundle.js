@@ -39674,7 +39674,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/chunk-QAITB7GG.mjs");
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-PULVB27S.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-FAWTVNS3.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
 /* harmony import */ var _util_getRandomBody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/getRandomBody */ "./src/util/getRandomBody.ts");
 /* harmony import */ var _util_getRandomRightHandAccessory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/getRandomRightHandAccessory */ "./src/util/getRandomRightHandAccessory.ts");
 /* harmony import */ var _util_getRandomLeftHandAccessory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/getRandomLeftHandAccessory */ "./src/util/getRandomLeftHandAccessory.ts");
@@ -39689,8 +39690,8 @@ const App = () => {
     const [leftHandAccessory, setLeftHandAccessory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.ChakraProvider, null,
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Button, { onClick: () => {
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Center, null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Button, { onClick: () => {
                         setBody((0,_util_getRandomBody__WEBPACK_IMPORTED_MODULE_1__.getRandomBody)());
                         setRightHandAccessory((0,_util_getRandomRightHandAccessory__WEBPACK_IMPORTED_MODULE_2__.getRandomRightHandAccessory)());
                         setLeftHandAccessory((0,_util_getRandomLeftHandAccessory__WEBPACK_IMPORTED_MODULE_3__.getRandomLeftHandAccessory)());
@@ -39700,10 +39701,10 @@ const App = () => {
                     ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: body, id: "korokBody" })
                     : null,
                 rightHandAccessory
-                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: rightHandAccessory, id: "korokRightHandAccessory" })
+                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: rightHandAccessory, id: "korokHandAccessory" })
                     : null,
                 leftHandAccessory
-                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: leftHandAccessory, id: "korokLeftHandAccessory" })
+                    ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: leftHandAccessory, id: "korokHandAccessory" })
                     : null,
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: './src/assets/background.png', alt: 'background', id: "korokBackground" })))));
 };
@@ -41468,6 +41469,69 @@ var icon_default = Icon;
 
 
 //# sourceMappingURL=chunk-2GBDXOMA.mjs.map
+
+/***/ }),
+
+/***/ "./node_modules/@chakra-ui/layout/dist/chunk-FAWTVNS3.mjs":
+/*!****************************************************************!*\
+  !*** ./node_modules/@chakra-ui/layout/dist/chunk-FAWTVNS3.mjs ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AbsoluteCenter: () => (/* binding */ AbsoluteCenter),
+/* harmony export */   Center: () => (/* binding */ Center)
+/* harmony export */ });
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-ZHQNHOQS.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-ZJJGQIVY.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+'use client'
+
+// src/center.tsx
+;
+
+var Center = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.chakra)("div", {
+  baseStyle: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  }
+});
+Center.displayName = "Center";
+var centerStyles = {
+  horizontal: {
+    insetStart: "50%",
+    transform: "translateX(-50%)"
+  },
+  vertical: {
+    top: "50%",
+    transform: "translateY(-50%)"
+  },
+  both: {
+    insetStart: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)"
+  }
+};
+var AbsoluteCenter = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.forwardRef)(
+  function AbsoluteCenter2(props, ref) {
+    const { axis = "both", ...rest } = props;
+    return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(
+      _chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.chakra.div,
+      {
+        ref,
+        __css: centerStyles[axis],
+        ...rest,
+        position: "absolute"
+      }
+    );
+  }
+);
+
+
+//# sourceMappingURL=chunk-FAWTVNS3.mjs.map
 
 /***/ }),
 

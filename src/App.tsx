@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Button, ChakraProvider } from "@chakra-ui/react";
+import { Box, Button, Center, ChakraProvider } from "@chakra-ui/react";
 import { getRandomBody } from './util/getRandomBody';
 import { getRandomRightHandAccessory } from './util/getRandomRightHandAccessory';
 import { getRandomLeftHandAccessory } from './util/getRandomLeftHandAccessory';
@@ -11,7 +11,7 @@ const App = () => {
   return (
     <ChakraProvider>
       <Box>
-        <Box>
+        <Center>
           <Button onClick={
             () => { 
               setBody(getRandomBody());
@@ -21,7 +21,7 @@ const App = () => {
           }>
             Randomize!
           </Button>
-        </Box>
+        </Center>
         <Box>
         {
           body
@@ -30,12 +30,12 @@ const App = () => {
         }
         {
           rightHandAccessory
-          ? <img src={rightHandAccessory} id="korokRightHandAccessory"/> 
+          ? <img src={rightHandAccessory} id="korokHandAccessory"/> 
           : null
         }
         {
           leftHandAccessory
-          ? <img src={leftHandAccessory} id="korokLeftHandAccessory"/> 
+          ? <img src={leftHandAccessory} id="korokHandAccessory"/> 
           : null
         }
         <img src='./src/assets/background.png' alt='background' id="korokBackground"/>

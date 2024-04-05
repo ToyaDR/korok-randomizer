@@ -7,30 +7,20 @@ body {
 
 #korokBackground {
   position:absolute;
-  top:10;
-  left:0;
   z-index:0;
+  max-height:1000px;
 }
 
 #korokBody {
   position:absolute;
-  top:10;
-  left:10;
   z-index:1;
+  max-height:1000px;
 }
 
-#korokRightHandAccessory {
+#korokHandAccessory {
   position:absolute;
-  top:10;
-  left:10;
   z-index:2;
-}
-
-#korokLeftHandAccessory {
-  position:absolute;
-  top:10;
-  left:10;
-  z-index:3;
+  max-height:1000px;
 }
 
 /*# sourceMappingURL=main.css.map*/
