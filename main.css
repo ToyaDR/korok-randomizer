@@ -5,22 +5,44 @@ body {
   color: blue;
 }
 
+@font-face {
+  font-family: 'zelda-serif';
+  src: url(f2586a76dbe6e9c1c007.otf)
+}
+
+h1 {
+  font-family:'zelda-serif';
+  font-size:xxx-large;
+}
+
+p {
+  font-family:revert;
+  color: white;
+  font-style: oblique;
+}
+
+h2 {
+  font-family:revert;
+  font-style: oblique;
+}
+
 #korokBackground {
   position:absolute;
   z-index:0;
-  max-height:1000px;
+  max-height:800px;
+  border-radius: 15px;
 }
 
 #korokBody {
   position:absolute;
   z-index:1;
-  max-height:1000px;
+  max-height:800px;
 }
 
 #korokHandAccessory {
   position:absolute;
   z-index:2;
-  max-height:1000px;
+  max-height:800px;
 }
 
 /*# sourceMappingURL=main.css.map*/

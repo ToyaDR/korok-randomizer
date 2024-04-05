@@ -39672,13 +39672,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/chunk-QAITB7GG.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-PULVB27S.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-FAWTVNS3.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/chunk-QAITB7GG.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-PULVB27S.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-K7XRJ7NL.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-FAWTVNS3.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
 /* harmony import */ var _util_getRandomBody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/getRandomBody */ "./src/util/getRandomBody.ts");
 /* harmony import */ var _util_getRandomRightHandAccessory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/getRandomRightHandAccessory */ "./src/util/getRandomRightHandAccessory.ts");
 /* harmony import */ var _util_getRandomLeftHandAccessory__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/getRandomLeftHandAccessory */ "./src/util/getRandomLeftHandAccessory.ts");
+/* harmony import */ var _assets_social_icons_InstagramIcon__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/social-icons/InstagramIcon */ "./src/assets/social-icons/InstagramIcon.tsx");
+
 
 
 
@@ -39688,15 +39691,24 @@ const App = () => {
     const [body, setBody] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [rightHandAccessory, setRightHandAccessory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [leftHandAccessory, setLeftHandAccessory] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.ChakraProvider, null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Center, null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Button, { onClick: () => {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.ChakraProvider, null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Box, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Link, { href: "https://www.instagram.com/puns.and.needles/", target: '_blank' },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.Center, null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Box, { paddingRight: '8px' },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_assets_social_icons_InstagramIcon__WEBPACK_IMPORTED_MODULE_4__["default"], null)),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Art by puns.and.needles")))),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Box, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.Center, null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Korok Randomizer")),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.Center, { padding: "8px" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Button, { background: "#0a3011", onClick: () => {
                         setBody((0,_util_getRandomBody__WEBPACK_IMPORTED_MODULE_1__.getRandomBody)());
                         setRightHandAccessory((0,_util_getRandomRightHandAccessory__WEBPACK_IMPORTED_MODULE_2__.getRandomRightHandAccessory)());
                         setLeftHandAccessory((0,_util_getRandomLeftHandAccessory__WEBPACK_IMPORTED_MODULE_3__.getRandomLeftHandAccessory)());
-                    } }, "Randomize!")),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, null,
+                    }, size: 'lg' },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Randomize!"))),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Box, { display: "flex", justifyContent: "center" },
                 body
                     ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: body, id: "korokBody" })
                     : null,
@@ -39709,6 +39721,30 @@ const App = () => {
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: './src/assets/background.png', alt: 'background', id: "korokBackground" })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+
+/***/ }),
+
+/***/ "./src/assets/social-icons/InstagramIcon.tsx":
+/*!***************************************************!*\
+  !*** ./src/assets/social-icons/InstagramIcon.tsx ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const InstagramIcon = () => (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", { width: "24", height: "24", version: "1.1", id: "Layer_1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", x: "0px", y: "0px", viewBox: "0 0 56 56", "enable-background": "new 0 0 56 56", xmlSpace: "preserve" },
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("g", null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M28.2,16.7c-7,0-12.8,5.7-12.8,12.8s5.7,12.8,12.8,12.8S41,36.5,41,29.5S35.2,16.7,28.2,16.7z M28.2,37.7\r\n          c-4.5,0-8.2-3.7-8.2-8.2s3.7-8.2,8.2-8.2s8.2,3.7,8.2,8.2S32.7,37.7,28.2,37.7z" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("circle", { cx: "41.5", cy: "16.4", r: "2.9" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", { d: "M49,8.9c-2.6-2.7-6.3-4.1-10.5-4.1H17.9c-8.7,0-14.5,5.8-14.5,14.5v20.5c0,4.3,1.4,8,4.2,10.7c2.7,2.6,6.3,3.9,10.4,3.9\r\n          h20.4c4.3,0,7.9-1.4,10.5-3.9c2.7-2.6,4.1-6.3,4.1-10.6V19.3C53,15.1,51.6,11.5,49,8.9z M48.6,39.9c0,3.1-1.1,5.6-2.9,7.3\r\n          s-4.3,2.6-7.3,2.6H18c-3,0-5.5-0.9-7.3-2.6C8.9,45.4,8,42.9,8,39.8V19.3c0-3,0.9-5.5,2.7-7.3c1.7-1.7,4.3-2.6,7.3-2.6h20.6\r\n          c3,0,5.5,0.9,7.3,2.7c1.7,1.8,2.7,4.3,2.7,7.2V39.9L48.6,39.9z" }))));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (InstagramIcon);
 
 
 /***/ }),
@@ -41532,6 +41568,51 @@ var AbsoluteCenter = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.forwardRe
 
 
 //# sourceMappingURL=chunk-FAWTVNS3.mjs.map
+
+/***/ }),
+
+/***/ "./node_modules/@chakra-ui/layout/dist/chunk-K7XRJ7NL.mjs":
+/*!****************************************************************!*\
+  !*** ./node_modules/@chakra-ui/layout/dist/chunk-K7XRJ7NL.mjs ***!
+  \****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Link: () => (/* binding */ Link)
+/* harmony export */ });
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-ZJJGQIVY.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-DMO4EI7P.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/styled-system/dist/index.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-ZHQNHOQS.mjs");
+/* harmony import */ var _chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/shared-utils */ "./node_modules/@chakra-ui/shared-utils/dist/index.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+'use client'
+
+// src/link.tsx
+;
+
+
+var Link = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(function Link2(props, ref) {
+  const styles = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.useStyleConfig)("Link", props);
+  const { className, isExternal, ...rest } = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_3__.omitThemingProps)(props);
+  return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(
+    _chakra_ui_system__WEBPACK_IMPORTED_MODULE_4__.chakra.a,
+    {
+      target: isExternal ? "_blank" : void 0,
+      rel: isExternal ? "noopener" : void 0,
+      ref,
+      className: (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_5__.cx)("chakra-link", className),
+      ...rest,
+      __css: styles
+    }
+  );
+});
+Link.displayName = "Link";
+
+
+//# sourceMappingURL=chunk-K7XRJ7NL.mjs.map
 
 /***/ }),
 
