@@ -1,5 +1,6 @@
 import { getRandomInt } from "./getRandomInt"
 
+const pathPrefix = "./src/assets/bodies/";
 const bodies = [
   "blue",
   "dark-brown",
@@ -8,7 +9,5 @@ const bodies = [
   "yellow-green",
 ]
 export const getRandomBody = () => {
-  const index = getRandomInt(5);
-  console.log(index);
-  return bodies[index];
+  return `${pathPrefix}${bodies[(getRandomInt(5))]}.png`;
 }

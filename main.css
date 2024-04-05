@@ -19,4 +19,11 @@ body {
   z-index:1;
 }
 
+#korokRightHandAccessory {
+  position:absolute;
+  top:10;
+  left:10;
+  z-index:2;
+}
+
 /*# sourceMappingURL=main.css.map*/
