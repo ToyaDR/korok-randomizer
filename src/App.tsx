@@ -1,7 +1,15 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import * as React from 'react';
+import { ChakraProvider } from "@chakra-ui/react";
 
-const container = document.getElementById('app-root')!
-const root = createRoot(container)
-root.render(<h1>Hello React!</h1>)
+const App = () => {
+  return (
+    <ChakraProvider>
+      <h1>Korok Randomizer</h1>
+      <>
+        <img src='./src/assets/background.png' alt='background' />
+      </>
+    </ChakraProvider>
+  )
+}
+
+export default App;
