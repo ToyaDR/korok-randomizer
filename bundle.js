@@ -39718,6 +39718,7 @@ const App = () => {
                 leftHandAccessory
                     ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: leftHandAccessory, id: "korokHandAccessory" })
                     : null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: './src/assets/which-korok-text.png', alt: 'background', id: "korokText" }),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: './src/assets/background.png', alt: 'background', id: "korokBackground" })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);

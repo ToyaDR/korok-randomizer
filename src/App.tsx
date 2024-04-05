@@ -58,6 +58,7 @@ const App = () => {
             ? <img src={leftHandAccessory} id="korokHandAccessory"/> 
             : null
           }
+          <img src='./src/assets/which-korok-text.png' alt='background' id="korokText"/>
           <img src='./src/assets/background.png' alt='background' id="korokBackground"/>
         </Box>
       </Box>

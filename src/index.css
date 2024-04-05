@@ -30,14 +30,21 @@ h2 {
   border-radius: 15px;
 }
 
-#korokBody {
+#korokText {
   position:absolute;
   z-index:1;
+  max-height:800px;
+  border-radius: 15px;
+}
+
+#korokBody {
+  position:absolute;
+  z-index:2;
   max-height:800px;
 }
 
 #korokHandAccessory {
   position:absolute;
-  z-index:2;
+  z-index:3;
   max-height:800px;
 }
