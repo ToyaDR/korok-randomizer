@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { Box, Button, Center, ChakraProvider, Icon, Link } from "@chakra-ui/react";
+import { Box, Button, Center, ChakraProvider, Link } from "@chakra-ui/react";
 import { getRandomBody } from './util/getRandomBody';
-import { getRandomRightHandAccessory } from './util/getRandomRightHandAccessory';
-import { getRandomLeftHandAccessory } from './util/getRandomLeftHandAccessory';
+import { getAccessories } from './util/getAccessories';
 import InstagramIcon from './assets/social-icons/InstagramIcon';
+import { getRandomInt } from './util/getRandomInt';
+import { getRandomFace } from './util/getRandomFace';
 
+const bodyType: ('standing' | 'flying' | 'handsup')[] = ['standing', 'flying', 'handsup'];
 const App = () => {
   const [body, setBody] = useState<string | null>(null);
-  const [rightHandAccessory, setRightHandAccessory] = useState<string | null>(null);
-  const [leftHandAccessory, setLeftHandAccessory] = useState<string | null>(null);
+  const [face, setFace] = useState<string | null>(null);
+  const [accessories, setAccessories] = useState<string[]>([]);
   return (
     <ChakraProvider>
       <Box>
@@ -32,9 +34,10 @@ const App = () => {
             background="#0a3011"
             onClick={
                 () => { 
-                  setBody(getRandomBody());
-                  setRightHandAccessory(getRandomRightHandAccessory());
-                  setLeftHandAccessory(getRandomLeftHandAccessory());
+                  const body = bodyType[getRandomInt(bodyType.length)];
+                  setBody(getRandomBody(body));
+                  setFace(getRandomFace(body));
+                  setAccessories(getAccessories(body));
                 }
             }
             size='lg'
@@ -43,20 +46,20 @@ const App = () => {
           </Button>
         </Center>
         <Box display="flex" justifyContent="center">
+        {
+            face
+            ? <img src={face} id="korokFace"/> 
+            : null
+          }
           {
             body
             ? <img src={body} id="korokBody"/> 
             : null
           }
           {
-            rightHandAccessory
-            ? <img src={rightHandAccessory} id="korokHandAccessory"/> 
-            : null
-          }
-          {
-            leftHandAccessory
-            ? <img src={leftHandAccessory} id="korokHandAccessory"/> 
-            : null
+            accessories.map((accessory) => (
+              <img src={accessory} id="korokHandAccessory"/> 
+            ))
           }
           <img src='./src/assets/which-korok-text.png' alt='background' id="korokText"/>
           <img src='./src/assets/background.png' alt='background' id="korokBackground"/>

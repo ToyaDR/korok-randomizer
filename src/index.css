@@ -48,3 +48,9 @@ h2 {
   z-index:3;
   max-height:800px;
 }
+
+#korokFace {
+  position:absolute;
+  z-index:4;
+  max-height:800px;
+}
