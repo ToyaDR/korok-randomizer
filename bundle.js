@@ -39672,47 +39672,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/chunk-QAITB7GG.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-PULVB27S.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-K7XRJ7NL.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-FAWTVNS3.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
-/* harmony import */ var _util_getRandomBody__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/getRandomBody */ "./src/util/getRandomBody.ts");
-/* harmony import */ var _util_getAccessories__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/getAccessories */ "./src/util/getAccessories.ts");
-/* harmony import */ var _assets_social_icons_InstagramIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/social-icons/InstagramIcon */ "./src/assets/social-icons/InstagramIcon.tsx");
-/* harmony import */ var _util_getRandomInt__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/getRandomInt */ "./src/util/getRandomInt.ts");
-/* harmony import */ var _util_getRandomFace__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/getRandomFace */ "./src/util/getRandomFace.ts");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/react/dist/chunk-QAITB7GG.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-PULVB27S.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-K7XRJ7NL.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-FAWTVNS3.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
+/* harmony import */ var _assets_social_icons_InstagramIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/social-icons/InstagramIcon */ "./src/assets/social-icons/InstagramIcon.tsx");
+/* harmony import */ var _util_getKorok__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/getKorok */ "./src/util/getKorok.ts");
 
 
 
 
-
-
-
-const bodyType = ['standing', 'flying', 'handsup'];
 const App = () => {
     const [body, setBody] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [face, setFace] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
     const [accessories, setAccessories] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
-    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.ChakraProvider, null,
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Box, null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.Link, { href: "https://www.instagram.com/puns.and.needles/", target: '_blank' },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Center, null,
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Box, { paddingRight: '8px' },
-                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_assets_social_icons_InstagramIcon__WEBPACK_IMPORTED_MODULE_3__["default"], null)),
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_3__.ChakraProvider, null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Box, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Link, { href: "https://www.instagram.com/puns.and.needles/", target: '_blank' },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Center, null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Box, { paddingRight: '8px' },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_assets_social_icons_InstagramIcon__WEBPACK_IMPORTED_MODULE_1__["default"], null)),
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Art by puns.and.needles")))),
-        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Box, null,
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Center, null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Box, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Center, null,
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Korok Randomizer")),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Center, { padding: "8px" },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_10__.Button, { background: "#0a3011", onClick: () => {
-                        const body = bodyType[(0,_util_getRandomInt__WEBPACK_IMPORTED_MODULE_4__.getRandomInt)(bodyType.length)];
-                        setBody((0,_util_getRandomBody__WEBPACK_IMPORTED_MODULE_1__.getRandomBody)(body));
-                        setFace((0,_util_getRandomFace__WEBPACK_IMPORTED_MODULE_5__.getRandomFace)(body));
-                        setAccessories((0,_util_getAccessories__WEBPACK_IMPORTED_MODULE_2__.getAccessories)(body));
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__.Center, { padding: "8px" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Button, { background: "#0a3011", onClick: () => {
+                        const { face, body, accessories } = (0,_util_getKorok__WEBPACK_IMPORTED_MODULE_2__["default"])();
+                        console.log(body);
+                        setBody(body);
+                        setFace(face);
+                        setAccessories(accessories);
                     }, size: 'lg' },
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Randomize!"))),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Box, { display: "flex", justifyContent: "center" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_4__.Box, { display: "flex", justifyContent: "center" },
                 face
                     ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: face, id: "korokFace" })
                     : null,
@@ -39752,19 +39746,39 @@ const InstagramIcon = () => (react__WEBPACK_IMPORTED_MODULE_0___default().create
 
 /***/ }),
 
-/***/ "./src/util/getAccessories.ts":
-/*!************************************!*\
-  !*** ./src/util/getAccessories.ts ***!
-  \************************************/
+/***/ "./src/util/getKorok.ts":
+/*!******************************!*\
+  !*** ./src/util/getKorok.ts ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getAccessories: () => (/* binding */ getAccessories)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getRandomInt */ "./src/util/getRandomInt.ts");
 
+const pathPrefix = "./src/assets/";
+const bodyType = ['standing', 'flying', 'handsup'];
+const faceType = [
+    'red-chevron',
+    'orange-lemon',
+    'lightgreen-maple',
+    'green-winkheart',
+    'green-spearhead',
+    'green-longheart',
+    'green-long',
+    'green-lilypad',
+    'green-butterfly',
+];
+const noseAndBodyColor = [
+    'blue',
+    'darkbrown',
+    'darkgreen',
+    'lightbrown',
+    'lightgreen',
+];
 const getHandsUpAccessories = () => {
     let accessories = [];
     const hasRight = (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(2);
@@ -39788,77 +39802,18 @@ const getAccessories = (pathInfix) => {
             return [];
     }
 };
-
-
-/***/ }),
-
-/***/ "./src/util/getRandomBody.ts":
-/*!***********************************!*\
-  !*** ./src/util/getRandomBody.ts ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getRandomBody: () => (/* binding */ getRandomBody)
-/* harmony export */ });
-/* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getRandomInt */ "./src/util/getRandomInt.ts");
-
-const pathPrefix = "./src/assets/";
-const bodies = [
-    "blue",
-    "darkbrown",
-    "darkgreen",
-    "lightbrown",
-    "lightgreen",
-];
-const getRandomBody = (pathInfix) => {
-    const file = `${pathPrefix}${pathInfix}/bodies/${bodies[(0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(bodies.length)]}.png`;
-    console.log(file);
-    return file;
-};
-
-
-/***/ }),
-
-/***/ "./src/util/getRandomFace.ts":
-/*!***********************************!*\
-  !*** ./src/util/getRandomFace.ts ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getRandomFace: () => (/* binding */ getRandomFace)
-/* harmony export */ });
-/* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getRandomInt */ "./src/util/getRandomInt.ts");
-
-const pathPrefix = "./src/assets/";
-const faceType = [
-    'red-chevron',
-    'orange-lemon',
-    'lightgreen-maple',
-    'green-winkheart',
-    'green-spearhead',
-    'green-longheart',
-    'green-long',
-    'green-lilypad',
-    'green-butterfly',
-];
-const noseType = [
-    'blue',
-    'darkbrown',
-    'darkgreen',
-    'lightbrown',
-    'lightgreen',
-];
-const getRandomFace = (pathInfix) => {
+const getKorok = () => {
+    const body = bodyType[(0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(bodyType.length)];
     const face = faceType[(0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(faceType.length)];
-    const nose = noseType[(0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(noseType.length)];
-    return `${pathPrefix}${pathInfix}/faces/${face}/${nose}-nose.png`;
+    const color = noseAndBodyColor[(0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(noseAndBodyColor.length)];
+    const path = `${pathPrefix}${body}`;
+    return {
+        face: `${path}/faces/${face}/${color}-nose.png`,
+        body: `${path}/bodies/${color}.png`,
+        accessories: getAccessories(body),
+    };
 };
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getKorok);
 
 
 /***/ }),

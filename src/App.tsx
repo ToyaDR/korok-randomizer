@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Button, Center, ChakraProvider, Link } from "@chakra-ui/react";
-import { getRandomBody } from './util/getRandomBody';
-import { getAccessories } from './util/getAccessories';
 import InstagramIcon from './assets/social-icons/InstagramIcon';
-import { getRandomInt } from './util/getRandomInt';
-import { getRandomFace } from './util/getRandomFace';
+import getKorok from './util/getKorok';
 
-const bodyType: ('standing' | 'flying' | 'handsup')[] = ['standing', 'flying', 'handsup'];
 const App = () => {
   const [body, setBody] = useState<string | null>(null);
   const [face, setFace] = useState<string | null>(null);
@@ -34,10 +30,15 @@ const App = () => {
             background="#0a3011"
             onClick={
                 () => { 
-                  const body = bodyType[getRandomInt(bodyType.length)];
-                  setBody(getRandomBody(body));
-                  setFace(getRandomFace(body));
-                  setAccessories(getAccessories(body));
+                  const {
+                    face,
+                    body,
+                    accessories
+                  } = getKorok();
+                  console.log(body);
+                  setBody(body);
+                  setFace(face);
+                  setAccessories(accessories);
                 }
             }
             size='lg'
