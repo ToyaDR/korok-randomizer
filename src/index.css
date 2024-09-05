@@ -58,6 +58,6 @@ h2 {
 #korokPoof {
   position:absolute;
   z-index:2;
-  max-height:800px;
-  padding-top:200px;
+  width: 720px;
+  height: 960px;
 }
