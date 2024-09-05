@@ -1,12 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Button, Center, ChakraProvider, Link } from "@chakra-ui/react";
 import InstagramIcon from './assets/social-icons/InstagramIcon';
 import getKorok from './util/getKorok';
+import { getRandomInt } from './util/getRandomInt';
 
 const App = () => {
   const [body, setBody] = useState<string | null>(null);
   const [face, setFace] = useState<string | null>(null);
   const [accessories, setAccessories] = useState<string[]>([]);
+
+  const [poofTimer, setPoofTimer] = useState<number>(0);
+  const [playPoof, setPlayPoof] = useState<boolean>(false);
+  const [poofInt, setPoofInt] = useState<number>(getRandomInt(100));
+
+  useEffect(() => {
+    if (!poofTimer) { 
+      const {
+        face,
+        body,
+        accessories
+      } = getKorok();
+      setBody(body);
+      setFace(face);
+      setAccessories(accessories);
+      setPlayPoof(false);
+      return;
+    }
+    const intervalId = setInterval(() => {
+      setPoofTimer(poofTimer - 1);
+    }, 200);
+    return () => clearInterval(intervalId);
+  }, [poofTimer])
+
   return (
     <ChakraProvider>
       <Box>
@@ -29,16 +54,10 @@ const App = () => {
           <Button
             background="#0a3011"
             onClick={
-                () => { 
-                  const {
-                    face,
-                    body,
-                    accessories
-                  } = getKorok();
-                  console.log(body);
-                  setBody(body);
-                  setFace(face);
-                  setAccessories(accessories);
+                () => {
+                  setPlayPoof(true);
+                  setPoofTimer(2);
+                  setPoofInt(getRandomInt(100));
                 }
             }
             size='lg'
@@ -47,21 +66,29 @@ const App = () => {
           </Button>
         </Center>
         <Box display="flex" justifyContent="center">
-        {
-            face
-            ? <img src={face} id="korokFace"/> 
-            : null
-          }
+          <img src={`./src/assets/poof.gif?${poofInt}`} id="korokPoof" style={{ display: playPoof ? 'block' : 'none'}}/>
           {
-            body
-            ? <img src={body} id="korokBody"/> 
-            : null
+            !playPoof && (
+              <>
+                {
+                  face
+                  ? <img src={face} id="korokFace"/> 
+                  : null
+                }
+                {
+                  body
+                  ? <img src={body} id="korokBody"/> 
+                  : null
+                }
+                {
+                  accessories.map((accessory) => (
+                    <img src={accessory} id="korokHandAccessory"/> 
+                  ))
+                }
+              </>
+            )
           }
-          {
-            accessories.map((accessory) => (
-              <img src={accessory} id="korokHandAccessory"/> 
-            ))
-          }
+        
           <img src='./src/assets/which-korok-text.png' alt='background' id="korokText"/>
           <img src='./src/assets/background.png' alt='background' id="korokBackground"/>
         </Box>
