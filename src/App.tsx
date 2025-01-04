@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Center, ChakraProvider, Link } from "@chakra-ui/react";
+import { Box, Button, Center, ChakraProvider, Input, Link } from "@chakra-ui/react";
 import InstagramIcon from './assets/social-icons/InstagramIcon';
 import getKorok from './util/getKorok';
 import { getRandomInt } from './util/getRandomInt';
+import { convertStringToRandomInt } from './util/convertStringToRandomInt';
 
 const App = () => {
   const [body, setBody] = useState<string | null>(null);
@@ -13,13 +14,15 @@ const App = () => {
   const [playPoof, setPlayPoof] = useState<boolean>(false);
   const [poofInt, setPoofInt] = useState<number>(getRandomInt(100));
 
+  const [name, setName] = useState<string>('');
+
   useEffect(() => {
     if (!poofTimer) { 
       const {
         face,
         body,
         accessories
-      } = getKorok();
+      } = getKorok(name);
       setBody(body);
       setFace(face);
       setAccessories(accessories);
@@ -48,9 +51,17 @@ const App = () => {
       </Box>
       <Box>
         <Center>
-          <h1>Korok Randomizer</h1>
+          <h1>Korok Generator</h1>
         </Center>
         <Center padding="8px">
+          <Input 
+            width='25%' 
+            placeholder='Your Name'
+            marginRight='8px'
+            onChange={(event) => {
+              setName(event.target.value); 
+            }
+          }/>
           <Button
             background="#0a3011"
             onClick={
@@ -62,7 +73,7 @@ const App = () => {
             }
             size='lg'
           >
-            <p>Randomize!</p>
+            <p>Generate!</p>
           </Button>
         </Center>
         <Box display="flex" justifyContent="center">

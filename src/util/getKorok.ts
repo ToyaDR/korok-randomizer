@@ -1,3 +1,4 @@
+import { convertStringToRandomInt } from "./convertStringToRandomInt";
 import { getRandomInt } from "./getRandomInt";
 
 const pathPrefix = "./src/assets/";
@@ -47,10 +48,12 @@ const getAccessories = (pathInfix: 'flying' | 'standing' | 'handsup') => {
         return [];
   }
 }
-const getKorok = () => {
-  const body = bodyType[getRandomInt(bodyType.length)];
-  const face = faceType[getRandomInt(faceType.length)];
-  const color = noseAndBodyColor[getRandomInt(noseAndBodyColor.length)];
+const getKorok = (name: string) => {
+  const randomInt = convertStringToRandomInt(name);
+  
+  const body = bodyType[randomInt % bodyType.length];
+  const face = faceType[randomInt % faceType.length];
+  const color = noseAndBodyColor[randomInt % noseAndBodyColor.length];
 
   const path = `${pathPrefix}${body}`
 

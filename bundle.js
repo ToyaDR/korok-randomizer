@@ -39676,7 +39676,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-PULVB27S.mjs");
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-K7XRJ7NL.mjs");
 /* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/layout/dist/chunk-FAWTVNS3.mjs");
-/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/input/dist/chunk-6CVSDS6C.mjs");
+/* harmony import */ var _chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @chakra-ui/react */ "./node_modules/@chakra-ui/button/dist/chunk-UVUR7MCU.mjs");
 /* harmony import */ var _assets_social_icons_InstagramIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/social-icons/InstagramIcon */ "./src/assets/social-icons/InstagramIcon.tsx");
 /* harmony import */ var _util_getKorok__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util/getKorok */ "./src/util/getKorok.ts");
 /* harmony import */ var _util_getRandomInt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util/getRandomInt */ "./src/util/getRandomInt.ts");
@@ -39692,9 +39693,10 @@ const App = () => {
     const [poofTimer, setPoofTimer] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
     const [playPoof, setPlayPoof] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
     const [poofInt, setPoofInt] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)((0,_util_getRandomInt__WEBPACK_IMPORTED_MODULE_3__.getRandomInt)(100));
+    const [name, setName] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('');
     (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
         if (!poofTimer) {
-            const { face, body, accessories } = (0,_util_getKorok__WEBPACK_IMPORTED_MODULE_2__["default"])();
+            const { face, body, accessories } = (0,_util_getKorok__WEBPACK_IMPORTED_MODULE_2__["default"])(name);
             setBody(body);
             setFace(face);
             setAccessories(accessories);
@@ -39715,14 +39717,17 @@ const App = () => {
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Art by puns.and.needles")))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, null,
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Center, null,
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Korok Randomizer")),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Korok Generator")),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_7__.Center, { padding: "8px" },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.Button, { background: "#0a3011", onClick: () => {
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_8__.Input, { width: '25%', placeholder: 'Your Name', marginRight: '8px', onChange: (event) => {
+                        setName(event.target.value);
+                    } }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_9__.Button, { background: "#0a3011", onClick: () => {
                         setPlayPoof(true);
                         setPoofTimer(2);
                         setPoofInt((0,_util_getRandomInt__WEBPACK_IMPORTED_MODULE_3__.getRandomInt)(100));
                     }, size: 'lg' },
-                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Randomize!"))),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Generate!"))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_chakra_ui_react__WEBPACK_IMPORTED_MODULE_5__.Box, { display: "flex", justifyContent: "center" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: `./src/assets/poof.gif?${poofInt}`, id: "korokPoof", style: { display: playPoof ? 'block' : 'none' } }),
                 !playPoof && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
@@ -39765,6 +39770,29 @@ const InstagramIcon = () => (react__WEBPACK_IMPORTED_MODULE_0___default().create
 
 /***/ }),
 
+/***/ "./src/util/convertStringToRandomInt.ts":
+/*!**********************************************!*\
+  !*** ./src/util/convertStringToRandomInt.ts ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   convertStringToRandomInt: () => (/* binding */ convertStringToRandomInt)
+/* harmony export */ });
+/* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getRandomInt */ "./src/util/getRandomInt.ts");
+
+const convertStringToRandomInt = (stringToConvert) => {
+    const intMax = Array.from(stringToConvert)
+        .map(char => char.charCodeAt(0))
+        .reduce((acc, asciiValue) => acc + asciiValue, 0);
+    return (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(intMax);
+};
+
+
+/***/ }),
+
 /***/ "./src/util/getKorok.ts":
 /*!******************************!*\
   !*** ./src/util/getKorok.ts ***!
@@ -39776,7 +39804,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getRandomInt */ "./src/util/getRandomInt.ts");
+/* harmony import */ var _convertStringToRandomInt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./convertStringToRandomInt */ "./src/util/convertStringToRandomInt.ts");
+/* harmony import */ var _getRandomInt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./getRandomInt */ "./src/util/getRandomInt.ts");
+
 
 const pathPrefix = "./src/assets/";
 const bodyType = ['standing', 'flying', 'handsup'];
@@ -39800,8 +39830,8 @@ const noseAndBodyColor = [
 ];
 const getHandsUpAccessories = () => {
     let accessories = [];
-    const hasRight = (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(2);
-    const hasLeft = (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(2);
+    const hasRight = (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_1__.getRandomInt)(2);
+    const hasLeft = (0,_getRandomInt__WEBPACK_IMPORTED_MODULE_1__.getRandomInt)(2);
     if (hasRight > 0) {
         accessories.push("./src/assets/handsup/accessories/berry-branch-right.png");
     }
@@ -39821,10 +39851,11 @@ const getAccessories = (pathInfix) => {
             return [];
     }
 };
-const getKorok = () => {
-    const body = bodyType[(0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(bodyType.length)];
-    const face = faceType[(0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(faceType.length)];
-    const color = noseAndBodyColor[(0,_getRandomInt__WEBPACK_IMPORTED_MODULE_0__.getRandomInt)(noseAndBodyColor.length)];
+const getKorok = (name) => {
+    const randomInt = (0,_convertStringToRandomInt__WEBPACK_IMPORTED_MODULE_0__.convertStringToRandomInt)(name);
+    const body = bodyType[randomInt % bodyType.length];
+    const face = faceType[randomInt % faceType.length];
+    const color = noseAndBodyColor[randomInt % noseAndBodyColor.length];
     const path = `${pathPrefix}${body}`;
     return {
         face: `${path}/faces/${face}/${color}-nose.png`,
@@ -41422,6 +41453,271 @@ var css_reset_default = CSSReset;
 
 /***/ }),
 
+/***/ "./node_modules/@chakra-ui/form-control/dist/chunk-56K2BSAJ.mjs":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@chakra-ui/form-control/dist/chunk-56K2BSAJ.mjs ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useFormControl: () => (/* binding */ useFormControl),
+/* harmony export */   useFormControlProps: () => (/* binding */ useFormControlProps)
+/* harmony export */ });
+/* harmony import */ var _chunk_DFWC5MHP_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chunk-DFWC5MHP.mjs */ "./node_modules/@chakra-ui/form-control/dist/chunk-DFWC5MHP.mjs");
+/* harmony import */ var _chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @chakra-ui/shared-utils */ "./node_modules/@chakra-ui/shared-utils/dist/index.mjs");
+'use client'
+;
+
+// src/use-form-control.ts
+
+function useFormControl(props) {
+  const { isDisabled, isInvalid, isReadOnly, isRequired, ...rest } = useFormControlProps(props);
+  return {
+    ...rest,
+    disabled: isDisabled,
+    readOnly: isReadOnly,
+    required: isRequired,
+    "aria-invalid": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_0__.ariaAttr)(isInvalid),
+    "aria-required": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_0__.ariaAttr)(isRequired),
+    "aria-readonly": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_0__.ariaAttr)(isReadOnly)
+  };
+}
+function useFormControlProps(props) {
+  var _a, _b, _c;
+  const field = (0,_chunk_DFWC5MHP_mjs__WEBPACK_IMPORTED_MODULE_1__.useFormControlContext)();
+  const {
+    id,
+    disabled,
+    readOnly,
+    required,
+    isRequired,
+    isInvalid,
+    isReadOnly,
+    isDisabled,
+    onFocus,
+    onBlur,
+    ...rest
+  } = props;
+  const labelIds = props["aria-describedby"] ? [props["aria-describedby"]] : [];
+  if ((field == null ? void 0 : field.hasFeedbackText) && (field == null ? void 0 : field.isInvalid)) {
+    labelIds.push(field.feedbackId);
+  }
+  if (field == null ? void 0 : field.hasHelpText) {
+    labelIds.push(field.helpTextId);
+  }
+  return {
+    ...rest,
+    "aria-describedby": labelIds.join(" ") || void 0,
+    id: id != null ? id : field == null ? void 0 : field.id,
+    isDisabled: (_a = disabled != null ? disabled : isDisabled) != null ? _a : field == null ? void 0 : field.isDisabled,
+    isReadOnly: (_b = readOnly != null ? readOnly : isReadOnly) != null ? _b : field == null ? void 0 : field.isReadOnly,
+    isRequired: (_c = required != null ? required : isRequired) != null ? _c : field == null ? void 0 : field.isRequired,
+    isInvalid: isInvalid != null ? isInvalid : field == null ? void 0 : field.isInvalid,
+    onFocus: (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_0__.callAllHandlers)(field == null ? void 0 : field.onFocus, onFocus),
+    onBlur: (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_0__.callAllHandlers)(field == null ? void 0 : field.onBlur, onBlur)
+  };
+}
+
+
+//# sourceMappingURL=chunk-56K2BSAJ.mjs.map
+
+/***/ }),
+
+/***/ "./node_modules/@chakra-ui/form-control/dist/chunk-DFWC5MHP.mjs":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@chakra-ui/form-control/dist/chunk-DFWC5MHP.mjs ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   FormControl: () => (/* binding */ FormControl),
+/* harmony export */   FormHelperText: () => (/* binding */ FormHelperText),
+/* harmony export */   useFormControlContext: () => (/* binding */ useFormControlContext),
+/* harmony export */   useFormControlStyles: () => (/* binding */ useFormControlStyles)
+/* harmony export */ });
+/* harmony import */ var _chakra_ui_react_context__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/react-context */ "./node_modules/@chakra-ui/react-context/dist/index.mjs");
+/* harmony import */ var _chakra_ui_react_use_merge_refs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/react-use-merge-refs */ "./node_modules/@chakra-ui/react-use-merge-refs/dist/index.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-ZJJGQIVY.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-DMO4EI7P.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/styled-system/dist/index.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-ZHQNHOQS.mjs");
+/* harmony import */ var _chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/shared-utils */ "./node_modules/@chakra-ui/shared-utils/dist/index.mjs");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+'use client'
+
+// src/form-control.tsx
+;
+
+
+
+
+
+var [FormControlStylesProvider, useFormControlStyles] = (0,_chakra_ui_react_context__WEBPACK_IMPORTED_MODULE_2__.createContext)({
+  name: `FormControlStylesContext`,
+  errorMessage: `useFormControlStyles returned is 'undefined'. Seems you forgot to wrap the components in "<FormControl />" `
+});
+var [FormControlProvider, useFormControlContext] = (0,_chakra_ui_react_context__WEBPACK_IMPORTED_MODULE_2__.createContext)({
+  strict: false,
+  name: "FormControlContext"
+});
+function useFormControlProvider(props) {
+  const {
+    id: idProp,
+    isRequired,
+    isInvalid,
+    isDisabled,
+    isReadOnly,
+    ...htmlProps
+  } = props;
+  const uuid = (0,react__WEBPACK_IMPORTED_MODULE_0__.useId)();
+  const id = idProp || `field-${uuid}`;
+  const labelId = `${id}-label`;
+  const feedbackId = `${id}-feedback`;
+  const helpTextId = `${id}-helptext`;
+  const [hasFeedbackText, setHasFeedbackText] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [hasHelpText, setHasHelpText] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [isFocused, setFocus] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const getHelpTextProps = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(
+    (props2 = {}, forwardedRef = null) => ({
+      id: helpTextId,
+      ...props2,
+      /**
+       * Notify the field context when the help text is rendered on screen,
+       * so we can apply the correct `aria-describedby` to the field (e.g. input, textarea).
+       */
+      ref: (0,_chakra_ui_react_use_merge_refs__WEBPACK_IMPORTED_MODULE_3__.mergeRefs)(forwardedRef, (node) => {
+        if (!node)
+          return;
+        setHasHelpText(true);
+      })
+    }),
+    [helpTextId]
+  );
+  const getLabelProps = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(
+    (props2 = {}, forwardedRef = null) => ({
+      ...props2,
+      ref: forwardedRef,
+      "data-focus": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isFocused),
+      "data-disabled": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isDisabled),
+      "data-invalid": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isInvalid),
+      "data-readonly": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isReadOnly),
+      id: props2.id !== void 0 ? props2.id : labelId,
+      htmlFor: props2.htmlFor !== void 0 ? props2.htmlFor : id
+    }),
+    [id, isDisabled, isFocused, isInvalid, isReadOnly, labelId]
+  );
+  const getErrorMessageProps = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(
+    (props2 = {}, forwardedRef = null) => ({
+      id: feedbackId,
+      ...props2,
+      /**
+       * Notify the field context when the error message is rendered on screen,
+       * so we can apply the correct `aria-describedby` to the field (e.g. input, textarea).
+       */
+      ref: (0,_chakra_ui_react_use_merge_refs__WEBPACK_IMPORTED_MODULE_3__.mergeRefs)(forwardedRef, (node) => {
+        if (!node)
+          return;
+        setHasFeedbackText(true);
+      }),
+      "aria-live": "polite"
+    }),
+    [feedbackId]
+  );
+  const getRootProps = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(
+    (props2 = {}, forwardedRef = null) => ({
+      ...props2,
+      ...htmlProps,
+      ref: forwardedRef,
+      role: "group",
+      "data-focus": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isFocused),
+      "data-disabled": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isDisabled),
+      "data-invalid": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isInvalid),
+      "data-readonly": (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.dataAttr)(isReadOnly)
+    }),
+    [htmlProps, isDisabled, isFocused, isInvalid, isReadOnly]
+  );
+  const getRequiredIndicatorProps = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(
+    (props2 = {}, forwardedRef = null) => ({
+      ...props2,
+      ref: forwardedRef,
+      role: "presentation",
+      "aria-hidden": true,
+      children: props2.children || "*"
+    }),
+    []
+  );
+  return {
+    isRequired: !!isRequired,
+    isInvalid: !!isInvalid,
+    isReadOnly: !!isReadOnly,
+    isDisabled: !!isDisabled,
+    isFocused: !!isFocused,
+    onFocus: () => setFocus(true),
+    onBlur: () => setFocus(false),
+    hasFeedbackText,
+    setHasFeedbackText,
+    hasHelpText,
+    setHasHelpText,
+    id,
+    labelId,
+    feedbackId,
+    helpTextId,
+    htmlProps,
+    getHelpTextProps,
+    getErrorMessageProps,
+    getRootProps,
+    getLabelProps,
+    getRequiredIndicatorProps
+  };
+}
+var FormControl = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_5__.forwardRef)(
+  function FormControl2(props, ref) {
+    const styles = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_6__.useMultiStyleConfig)("Form", props);
+    const ownProps = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_7__.omitThemingProps)(props);
+    const {
+      getRootProps,
+      htmlProps: _,
+      ...context
+    } = useFormControlProvider(ownProps);
+    const className = (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.cx)("chakra-form-control", props.className);
+    return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FormControlProvider, { value: context, children: /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(FormControlStylesProvider, { value: styles, children: /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(
+      _chakra_ui_system__WEBPACK_IMPORTED_MODULE_8__.chakra.div,
+      {
+        ...getRootProps({}, ref),
+        className,
+        __css: styles["container"]
+      }
+    ) }) });
+  }
+);
+FormControl.displayName = "FormControl";
+var FormHelperText = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_5__.forwardRef)(
+  function FormHelperText2(props, ref) {
+    const field = useFormControlContext();
+    const styles = useFormControlStyles();
+    const className = (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_4__.cx)("chakra-form__helper-text", props.className);
+    return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(
+      _chakra_ui_system__WEBPACK_IMPORTED_MODULE_8__.chakra.div,
+      {
+        ...field == null ? void 0 : field.getHelpTextProps(props, ref),
+        __css: styles.helperText,
+        className
+      }
+    );
+  }
+);
+FormHelperText.displayName = "FormHelperText";
+
+
+//# sourceMappingURL=chunk-DFWC5MHP.mjs.map
+
+/***/ }),
+
 /***/ "./node_modules/@chakra-ui/icon/dist/chunk-2GBDXOMA.mjs":
 /*!**************************************************************!*\
   !*** ./node_modules/@chakra-ui/icon/dist/chunk-2GBDXOMA.mjs ***!
@@ -41508,6 +41804,56 @@ var icon_default = Icon;
 
 
 //# sourceMappingURL=chunk-2GBDXOMA.mjs.map
+
+/***/ }),
+
+/***/ "./node_modules/@chakra-ui/input/dist/chunk-6CVSDS6C.mjs":
+/*!***************************************************************!*\
+  !*** ./node_modules/@chakra-ui/input/dist/chunk-6CVSDS6C.mjs ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Input: () => (/* binding */ Input)
+/* harmony export */ });
+/* harmony import */ var _chakra_ui_form_control__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @chakra-ui/form-control */ "./node_modules/@chakra-ui/form-control/dist/chunk-56K2BSAJ.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-ZJJGQIVY.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-DMO4EI7P.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/styled-system/dist/index.mjs");
+/* harmony import */ var _chakra_ui_system__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @chakra-ui/system */ "./node_modules/@chakra-ui/system/dist/chunk-ZHQNHOQS.mjs");
+/* harmony import */ var _chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @chakra-ui/shared-utils */ "./node_modules/@chakra-ui/shared-utils/dist/index.mjs");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+'use client'
+
+// src/input.tsx
+;
+
+
+
+var Input = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_1__.forwardRef)(function Input2(props, ref) {
+  const { htmlSize, ...rest } = props;
+  const styles = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_2__.useMultiStyleConfig)("Input", rest);
+  const ownProps = (0,_chakra_ui_system__WEBPACK_IMPORTED_MODULE_3__.omitThemingProps)(rest);
+  const input = (0,_chakra_ui_form_control__WEBPACK_IMPORTED_MODULE_4__.useFormControl)(ownProps);
+  const _className = (0,_chakra_ui_shared_utils__WEBPACK_IMPORTED_MODULE_5__.cx)("chakra-input", props.className);
+  return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(
+    _chakra_ui_system__WEBPACK_IMPORTED_MODULE_6__.chakra.input,
+    {
+      size: htmlSize,
+      ...input,
+      __css: styles.field,
+      ref,
+      className: _className
+    }
+  );
+});
+Input.displayName = "Input";
+Input.id = "Input";
+
+
+//# sourceMappingURL=chunk-6CVSDS6C.mjs.map
 
 /***/ }),
 
