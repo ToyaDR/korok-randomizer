@@ -40,18 +40,21 @@ const App = () => {
       <Box>
         <Link href="https://www.instagram.com/puns.and.needles/" target='_blank'>
           <Center>
-            <Box paddingRight='8px' >
-              <InstagramIcon/>
-            </Box>
-              <h2>
-                Art by puns.and.needles
+              <h2 style={{ color: 'white' }}>
+                Art by 
+              </h2>
+              <Box paddingRight='8px' paddingLeft='8px'>
+                <InstagramIcon/>
+              </Box>
+              <h2 style={{ color: 'white' }}>
+                puns.and.needles
               </h2>
           </Center>
         </Link>
       </Box>
       <Box>
         <Center>
-          <h1>Korok Generator</h1>
+          <h1 style={{ color: 'white' }}>Korok Generator</h1>
         </Center>
         <Center padding="8px">
           <Input 
@@ -63,7 +66,10 @@ const App = () => {
             }
           }/>
           <Button
-            background="#0a3011"
+            background="#5eb7e7"
+            style={{
+              boxShadow: '10px 5px 5px #383838'
+            }}
             onClick={
                 () => {
                   setPlayPoof(true);
